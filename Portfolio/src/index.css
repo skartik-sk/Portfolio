@@ -10,7 +10,7 @@
 }
 
 body {
-    @apply bg-neutral-950;
+    @apply bg-Black-primary;
 }
 
 .radial-gradient {

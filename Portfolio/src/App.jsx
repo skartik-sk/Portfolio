@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import TopNav from './components/TopNav'
 import Footer from './components/Footer'
+import Home from './pages/Home'
 
 function Container({ children}) {
   return (
@@ -17,9 +18,15 @@ function App() {
 
   return (
     <>
-     <div className='flex flex-col h-screen px-14 bg-Black-primary'>
+     <div className='flex flex-col h-screen  '>
        <TopNav/>
-       <div className='flex-grow'></div>
+       <div className='flex-grow mt-24'>
+        <Home/>
+      
+
+
+
+       </div>
      {/* <Container children={children}/> */}
      <footer>
 
