@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: theme => ({
         'gradient-background': 'linear-gradient(90deg, #b16cea 14.06%, #ff5e69 44.79%, #ff8a56 71.88%, #ffa84b)',
+        
       })
 ,
       colors:{

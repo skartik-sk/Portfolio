@@ -1,8 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import Bage from "../components/Bage";
+import {motion ,AnimatePresence} from 'framer-motion'
+import Accordion from "../components/Accordian";
+import Banner from "../components/Banner";
 const Top = () => {
   return (
-    <div className="mb-10 flex flex-col align-middle space-y-3 text-center justify-center items-center ">
+    <div className="mb-10 flex flex-col align-middle space-y-5 text-center justify-center items-center ">
       <img
         className="h-48 w-48 rounded-full"
         src="https://raw.githubusercontent.com/SingupalliKartik/Portfolio/0201b8af1e6e9ddc2ce78d7b5fda12e6c3108f6b/Portfolio/src/assets/photo.jpeg"
@@ -45,121 +48,307 @@ const Trusted = () => {
 const Mid = () => {
   return (
     <div className="px-14 w-full">
-        <div className="w-1/2 mx-auto flex  justify-around">
+      <div className="w-1/2 mx-auto flex  justify-around">
         <div className=" items-center justify-center flex flex-col">
-            <div className=" text-transparent text-4xl font-black bg-clip-text bg-gradient-background">2+</div>
-        <div className=" text-gray-300">Years of experience</div>
+          <div className=" text-transparent text-4xl font-black bg-clip-text bg-gradient-background">
+            2+
+          </div>
+          <div className=" text-gray-300">Years of experience</div>
         </div>
         <div className="w-1 h-full text-6xl text-gray-600"> &#124; </div>
         <div className=" items-center justify-center flex flex-col">
-            <div className=" text-transparent text-4xl font-black bg-clip-text bg-gradient-background">5+</div>
-        <div className=" text-gray-300">successfull projects</div>
+          <div className=" text-transparent text-4xl font-black bg-clip-text bg-gradient-background">
+            5+
+          </div>
+          <div className=" text-gray-300">successfull projects</div>
         </div>
         <div className="w-1 h-full text-6xl text-gray-600"> &#124; </div>
-        
-        <div className=" items-center justify-center flex flex-col">
-            <div className=" text-transparent text-4xl font-black bg-clip-text bg-gradient-background">3+</div>
-        <div className=" text-gray-300">Customers</div>
-        </div>
 
+        <div className=" items-center justify-center flex flex-col">
+          <div className=" text-transparent text-4xl font-black bg-clip-text bg-gradient-background">
+            3+
+          </div>
+          <div className=" text-gray-300">Customers</div>
+        </div>
       </div>
-      <EducationWork/>
+      <EducationWork />
 
       <div className="flex justify-between w-full  align-bottom items-end px-5 my-6">
         <div className="text-4xl    text font-black w-1/3 ">
-          Code that solves <span className="px-12"><span>&#8213;</span>problem, one</span> {" "}
+          Code that solves{" "}
+          <span className="px-12">
+            <span>&#8213;</span>problem, one
+          </span>{" "}
           <span className="text-transparent bg-clip-text bg-gradient-background">
             product at a time{" "}
           </span>
         </div>
 
-        
-          <div className=" flex space-x-3">
-            <button className=" bg-gradient-background font-semibold rounded-full py-2 px-10">
-              Get in touch
-            </button>
-            <button className=" border border-white font-semibold rounded-full py-2 px-10">
-              View my work
-            </button>
-          </div>
-        
+        <div className=" flex space-x-3">
+          <button className=" bg-gradient-background font-semibold rounded-full py-2 px-10">
+            Get in touch
+          </button>
+          <button className=" border border-white font-semibold rounded-full py-2 px-10">
+            View my work
+          </button>
+        </div>
       </div>
-
-      
     </div>
   );
 };
-const EducationWork=()=>{
-    return(
-        <div className="flex justify-around my-14">
-            <div className=" w-1/3 mx-auto">
-                <div> <span className="text-transparent text-4xl font-semibold bg-clip-text bg-gradient-background">
+const EducationWork = () => {
+  return (
+    <div className="flex justify-around my-14">
+      <div className=" w-1/3 mx-auto">
+        <div>
+          {" "}
+          <span className="text-transparent text-4xl font-semibold bg-clip-text bg-gradient-background">
             Education{" "}
-          </span></div>
-          <div>
-<div className=" border-b-2 border-gray-600 py-4 my-2">
-    <div className="text-2xl font-medium">UIT RGPV </div>
-    <div className=" flex justify-between">
-<div className="text-gray-400 text-sm">Btech- CSE</div>
-<div className="text-gray-400 text-sm">* 2022-2026</div>
-    </div>
-
-</div>
-<div className=" border-b-2 border-gray-600 py-4 my-2">
-    <div className="text-2xl font-medium">UIT RGPV </div>
-    <div className=" flex justify-between">
-<div className="text-gray-400 text-sm">Btech- CSE</div>
-<div className="text-gray-400 text-sm">* 2022-2026</div>
-    </div>
-
-</div>
-<div className=" border-b-2 border-gray-600 py-4 my-2">
-    <div className="text-2xl font-medium">UIT RGPV </div>
-    <div className=" flex justify-between">
-<div className="text-gray-400 text-sm">Btech- CSE</div>
-<div className="text-gray-400 text-sm">* 2022-2026</div>
-    </div>
-
-</div>
-
-
-          </div>
-            </div>
-            <div className=" w-1/3 mx-auto">
-                <div> <span className="text-transparent text-4xl font-semibold bg-clip-text bg-gradient-background">
-            Work Experience{" "}
-          </span></div>
-          <div>
-<div className=" border-b-2 border-gray-600 py-4 my-2">
-    <div className="text-2xl font-medium">UIT RGPV </div>
-    <div className=" flex justify-between">
-<div className="text-gray-400 text-sm">Btech- CSE</div>
-<div className="text-gray-400 text-sm">* 2022-2026</div>
-    </div>
-
-</div>
-<div className=" border-b-2 border-gray-600 py-4 my-2">
-    <div className="text-2xl font-medium">UIT RGPV </div>
-    <div className=" flex justify-between">
-<div className="text-gray-400 text-sm">Btech- CSE</div>
-<div className="text-gray-400 text-sm">* 2022-2026</div>
-    </div>
-
-</div>
-<div className=" border-b-2 border-gray-600 py-4 my-2">
-    <div className="text-2xl font-medium">UIT RGPV </div>
-    <div className=" flex justify-between">
-<div className="text-gray-400 text-sm">Btech- CSE</div>
-<div className="text-gray-400 text-sm">* 2022-2026</div>
-    </div>
-
-</div>
-
-
-          </div>
-            </div>
+          </span>
         </div>
-    )
+        <div>
+          <div className=" border-b-2 border-gray-600 py-4 my-2">
+            <div className="text-2xl font-medium">UIT RGPV </div>
+            <div className=" flex justify-between">
+              <div className="text-gray-400 text-sm">Btech- CSE</div>
+              <div className="text-gray-400 text-sm">* 2022-2026</div>
+            </div>
+          </div>
+          <div className=" border-b-2 border-gray-600 py-4 my-2">
+            <div className="text-2xl font-medium">UIT RGPV </div>
+            <div className=" flex justify-between">
+              <div className="text-gray-400 text-sm">Btech- CSE</div>
+              <div className="text-gray-400 text-sm">* 2022-2026</div>
+            </div>
+          </div>
+          <div className=" border-b-2 border-gray-600 py-4 my-2">
+            <div className="text-2xl font-medium">UIT RGPV </div>
+            <div className=" flex justify-between">
+              <div className="text-gray-400 text-sm">Btech- CSE</div>
+              <div className="text-gray-400 text-sm">* 2022-2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className=" w-1/3 mx-auto">
+        <div>
+          {" "}
+          <span className="text-transparent text-4xl font-semibold bg-clip-text bg-gradient-background">
+            Work Experience{" "}
+          </span>
+        </div>
+        <div>
+          <div className=" border-b-2 border-gray-600 py-4 my-2">
+            <div className="text-2xl font-medium">UIT RGPV </div>
+            <div className=" flex justify-between">
+              <div className="text-gray-400 text-sm">Btech- CSE</div>
+              <div className="text-gray-400 text-sm">* 2022-2026</div>
+            </div>
+          </div>
+          <div className=" border-b-2 border-gray-600 py-4 my-2">
+            <div className="text-2xl font-medium">UIT RGPV </div>
+            <div className=" flex justify-between">
+              <div className="text-gray-400 text-sm">Btech- CSE</div>
+              <div className="text-gray-400 text-sm">* 2022-2026</div>
+            </div>
+          </div>
+          <div className=" border-b-2 border-gray-600 py-4 my-2">
+            <div className="text-2xl font-medium">UIT RGPV </div>
+            <div className=" flex justify-between">
+              <div className="text-gray-400 text-sm">Btech- CSE</div>
+              <div className="text-gray-400 text-sm">* 2022-2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const GetInTouch = () => {
+  return (
+    <div className="px-20 flex ">
+      <div className="flex w-1/3 mx-auto  flex-col space-y-4">
+      <div>
+        {" "}
+        <span className="text-transparent text-4xl font-black bg-clip-text bg-gradient-background">
+          Get in touch{" "}
+        </span>
+      </div>
+      <div className="text-sm text-gray-300">
+        Have a project in mind? Looking to partner or work together? Reach
+        through the form and I'll get back to you within 48 hours.
+      </div>
+      <div className=" flex flex-col  space-y-3">
+        <div className=" flex space-x-3 items-center">
+        <svg width="29" height="22" viewBox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24.2588 0.723295L22.4033 2.17289L14.503 8.04376L6.60268 2.11491L4.74719 0.665311C4.31007 0.303702 3.77647 0.0782824 3.21249 0.0169789C2.6485 -0.0443245 2.07893 0.0611826 1.57432 0.320429C1.06972 0.579675 0.652262 0.981267 0.373669 1.47545C0.0950763 1.96964 -0.0324088 2.5347 0.00700792 3.10064V19.9015C0.00700792 20.4243 0.214714 20.9258 0.584433 21.2955C0.954152 21.6652 1.4556 21.8729 1.97846 21.8729H6.60268V10.682L14.503 16.6109L22.4033 10.682V21.8729H27.0275C27.5504 21.8729 28.0518 21.6652 28.4215 21.2955C28.7913 20.9258 28.999 20.4243 28.999 19.9015V3.10064C29.0262 2.53959 28.8898 1.98271 28.6065 1.4977C28.3231 1.01269 27.905 0.620441 27.4029 0.368623C26.9008 0.116805 26.3364 0.0162676 25.7782 0.0792317C25.22 0.142196 24.6922 0.36595 24.2588 0.723295Z" fill="url(#paint0_linear_2137_3)"/>
+<defs>
+<linearGradient id="paint0_linear_2137_3" x1="-1.46497e-07" y1="10.9026" x2="29.0024" y2="10.9026" gradientUnits="userSpaceOnUse">
+<stop offset="0.140625" stop-color="#B16CEA"/>
+<stop offset="0.447917" stop-color="#FF5E69"/>
+<stop offset="0.71875" stop-color="#FF8A56"/>
+<stop offset="1" stop-color="#FFA84B"/>
+</linearGradient>
+</defs>
+</svg>
+
+          <div>skartik1706@gmail.com</div>
+        </div>{" "}
+        <div className=" flex space-x-3 items-center">
+        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23 13.6079V22.1112H18.0702V14.1771C18.0702 12.1836 17.3569 10.8238 15.573 10.8238C14.2109 10.8238 13.3997 11.741 13.0436 12.6272C12.9134 12.9441 12.88 13.3855 12.88 13.8291V22.1112H7.94784C7.94784 22.1112 8.01468 8.67461 7.94784 7.28141H12.88V9.38331L12.8477 9.43171H12.88V9.38331C13.5345 8.375 14.7041 6.93339 17.3235 6.93339C20.5674 6.93339 23 9.05374 23 13.6079ZM2.78987 0.133301C1.10396 0.133301 0 1.23957 0 2.695C0 4.11817 1.0717 5.25786 2.72534 5.25786H2.7576C4.47808 5.25786 5.54632 4.11817 5.54632 2.695C5.51636 1.23957 4.47808 0.133301 2.78987 0.133301ZM0.2927 22.1112H5.22251V7.28141H0.2927V22.1112Z" fill="url(#paint0_linear_2114_24)"/>
+<defs>
+<linearGradient id="paint0_linear_2114_24" x1="23" y1="21.7804" x2="2.70588" y2="2.83918" gradientUnits="userSpaceOnUse">
+<stop offset="0.140625" stop-color="#B16CEA"/>
+<stop offset="0.447917" stop-color="#FF5E69"/>
+<stop offset="0.71875" stop-color="#FF8A56"/>
+<stop offset="1" stop-color="#FFA84B"/>
+</linearGradient>
+</defs>
+</svg>
+
+          <div>@singupalli-kartik</div>
+        </div>
+        </div>
+      </div>
+      <div className="flex w-6/12 mx-auto  flex-col space-y-6">
+        <div className="flex flex-col space-y-2 ">
+          <p className="text-sm">Your Name</p>
+          <input 
+            type="text"
+            placeholder="Enter your name"
+            
+            
+            className="w-full rounded-sm bg-[#1C1C22] p-4 "
+          ></input>
+        </div>
+        <div className="flex flex-col space-y-2 ">
+          <p className="text-sm">Your E-mail</p>
+          <input 
+            type="email"
+            placeholder="Enter your Email"
+            
+            
+            className="w-full rounded-sm bg-[#1C1C22] p-4 "
+          ></input>
+        </div>
+        <div className="flex flex-col space-y-2 ">
+          <p className="text-sm">Your Budget</p>
+          <input 
+            type="text"
+            placeholder="1k-3k"
+            className="w-full rounded-sm bg-[#1C1C22] p-4 "
+          ></input>
+        </div>
+        <div className="flex flex-col space-y-2 my-2">
+          <p className="text-sm">Tell me a bit more what you are looking for</p>
+          <textarea name="info" id="info" className="w-full rounded-sm bg-[#1C1C22] p-4 "
+        >
+            
+          </textarea>
+          <div className="py-3">
+
+          <button className=" w-1/3 bg-gradient-background font-bold rounded-full py-3 px-12">
+          Submit Now
+        </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+const items = [{id:1, subtitle: "helo", title: "kartik"},{id:3, subtitle: "helo", title: "kartik"},{id:2, subtitle: "helo", title: "kartik"}]
+const Tesimonials=()=>{
+  const [selectedId, setSelectedId] = useState(null)
+ 
+
+
+  return (
+    <div>
+{items.map(item => (
+  <motion.div layoutId={item.id} onClick={() => setSelectedId(item.id)}>
+    <motion.h5>{item.subtitle}</motion.h5>
+    <motion.h2>{item.title}</motion.h2>
+  </motion.div>
+))}
+
+<AnimatePresence>
+  {selectedId && (
+    <motion.div layoutId={selectedId}>
+      <motion.h5>{item.subtitle}</motion.h5>
+      <motion.h2>{item.title}</motion.h2>
+      <motion.button onClick={() => setSelectedId(null)} />
+    </motion.div>
+  )}
+  </AnimatePresence>
+    </div>
+  )
+
+}
+const FaQs = () => {
+  return (
+<div className="px-20 flex  py-5 ">
+      <div className="flex w-1/3 mx-auto  flex-col space-y-4">
+      <div className="text-4xl font-black">
+        {" "}
+        <div>
+
+        Frequently Asked
+        </div>
+
+        <span className="text-transparent  bg-clip-text bg-gradient-background">
+         Questions{" "}
+        </span>
+      </div>
+      <div className="text-sm text-gray-300 pt-3">
+        Answers to the burning questions in your mind.
+      </div>
+
+        <div className="py-3">
+
+          <button className=" w-1/2 bg-gradient-background font-bold rounded-full py-3 px-12">
+          Contact me
+        </button>
+          </div>
+        </div>
+      
+      <div className="flex w-6/12 mx-auto  flex-col space-y-6">
+       
+          
+      <Accordion/>
+      </div>
+    </div>
+  )
+}
+const End = () => {
+  return (
+  <div className="px-20 mb-16 ">
+   <div className="p-14 text text-center bg-gradient-background rounded  rounded-b-[100px]">
+   <div className="text-6xl font-bold w-1/2 mx-auto my-5">  Intrested in working with me? </div>
+   <button className=" border bg-white font-medium text-black rounded-full py-2 px-10">
+          Get in touch
+        </button>
+    </div>
+    
+
+
+  </div>)
+}
+const End2 = () => {
+  return (
+    <div className="px-32 mb-16   ">
+      <div className="text-4xl font-bold w-7/12  text-left mb-3">
+        See the impact of good, design - oriented code on your business.
+      </div>
+      <div className="relative pb-2 inline-block">
+  <span className="text-transparent  cursor-pointer text-5xl font-bold bg-clip-text bg-gradient-background z-10 relative">
+    Let's work together,{" "}&#8599;
+  </span>
+  <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-background"></div>
+</div>
+    </div>
+  )
 }
 const Home = () => {
   return (
@@ -171,7 +360,15 @@ const Home = () => {
 
       <Bage />
       <Mid />
-     
+      <GetInTouch />
+      <End2/>
+      {/* <Banner /> */}
+      {/* <Tesimonials /> */}
+      <FaQs/>
+      <End/>
+      
+
+      
     </>
   );
 };
