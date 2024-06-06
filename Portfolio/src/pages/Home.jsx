@@ -364,7 +364,7 @@ const Home = () => {
       <End2/>
       {/* <Banner /> */}
       {/* <Tesimonials /> */}
-      <FaQs/>
+      {/* <FaQs/> */}
       <End/>
       
 
