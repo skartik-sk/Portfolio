@@ -362,7 +362,7 @@ const Home = () => {
       <Mid />
       <GetInTouch />
       <End2/>
-      {/* <Banner /> */}
+      <Banner />
       {/* <Tesimonials /> */}
       <FaQs/>
       <End/>
