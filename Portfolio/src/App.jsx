@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import TopNav from './components/TopNav'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import Projects from './project';
 
 function Container({ children}) {
   return (
@@ -22,7 +23,8 @@ function App() {
      <div className='flex flex-col   '>
        <TopNav/>
        <div className='flex-grow mt-20'>
-        <Home/>
+        {/* <Home/> */}
+        <Projects/>
       
 
 
