@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -6,7 +6,9 @@ import { motion } from "framer-motion";
 import TopNav from './components/TopNav'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Projects from './project';
+import Loading from './pages/Loading';
+import Lenis from '@studio-freight/lenis/types';
+// import Projects from './project';
 
 function Container({ children}) {
   return (
@@ -16,15 +18,34 @@ function Container({ children}) {
   )
 }
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.1, // Smoothness of the scroll (0 to 1)
+      smooth: true, // Enable smooth scrolling
+      // Other options...
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Clean up
+  }, []);
+const [loading, setLoading] = useState(true)
+setTimeout(() => {
+  setLoading(false)
+}, 2000)
 
   return (
     <>
-     <div className='flex flex-col   '>
+    {loading ? <Loading/> : <div className='flex flex-col   '>
        <TopNav/>
        <div className='flex-grow mt-20'>
-        {/* <Home/> */}
-        <Projects/>
+        <Home/>
+        {/* <Projects/> */}
       
 
 
@@ -35,7 +56,9 @@ function App() {
 
 <Footer/>
      </footer>
-      </div>
+      </div>}
+
+     
       {/* <div className='fixed  right-2 bottom-2'>
       <div
       style={{
