@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import TopNav from './components/TopNav'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -38,11 +38,30 @@ const [loading, setLoading] = useState(true)
 setTimeout(() => {
   setLoading(false)
 }, 2000)
+const { scrollYProgress } = useScroll();
 
+useMotionValueEvent (scrollYProgress,
+  "change",
+  (latest) => {
+  console. log (latest);
+  }) ;
+
+
+  
   return (
     <>
     {loading ? <Loading/> : <div className='flex flex-col   '>
+      
        <TopNav/>
+       <motion.div
+
+      style={{
+        scaleX: scrollYProgress,
+        
+      }} className="fixed  h-1 rounded-full w-full
+bg-gradient-background">
+        
+      </motion.div>
        <div className='flex-grow mt-20'>
         <Home/>
         {/* <Projects/> */}

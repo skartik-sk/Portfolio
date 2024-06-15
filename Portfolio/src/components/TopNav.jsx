@@ -1,11 +1,32 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+
 const TopNav = () => {
+//   const { scrollY } = useScroll();
+
+// useMotionValueEvent (scrollY,
+//   "change",
+//   (latest) => {
+//     const prev = scrollY.getPrevious();
+//     if(latest > prev && latest){
+//       sethidden(true)}
+//       else {
+//         sethidden(false)
+//       }
+
+  
+
+//   }) ;
+  const {hidden , sethidden} = useState(false)
   return (
-    <div className=" sticky top-5 mx-auto p-1   bg-black  rounded-full my-5 flex    ">
+    <div
+   
+    
+    className=" sticky top-5 mx-auto p-1   bg-black  rounded-full my-5 flex    ">
+
       <div className="  flex w-full space-x-3 font-light justify-between">
         <div className="py-3  px-10 bg-black rounded-full text-lg font-semibold ">
-          Home
+        Home
         </div>
         <div className="py-3  px-10 bg-black rounded-full text-lg font-semibold">
           Services
