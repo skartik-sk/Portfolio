@@ -8,6 +8,8 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Loading from './pages/Loading';
 import Lenis from '@studio-freight/lenis/types';
+import Error from './pages/404';
+import Projects from './project';
 // import Projects from './project';
 
 function Container({ children}) {
@@ -62,9 +64,11 @@ useMotionValueEvent (scrollYProgress,
 bg-gradient-background">
         
       </motion.div>
-       <div className='flex-grow mt-20'>
-        <Home/>
-        {/* <Projects/> */}
+       <div className='flex-grow mt-16'>
+        {/* <Home/> */}
+        <Projects/>
+        {/* <Error/> */}
+
       
 
 
