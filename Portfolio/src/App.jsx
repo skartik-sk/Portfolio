@@ -65,8 +65,8 @@ bg-gradient-background">
         
       </motion.div>
        <div className='flex-grow mt-16'>
-        {/* <Home/> */}
-        <Projects/>
+        <Home/>
+        {/* <Projects/> */}
         {/* <Error/> */}
 
       
