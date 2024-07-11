@@ -18,8 +18,8 @@ const List = () => {
 
     return (
       <section ref={targetRef} className=" h-[200vh] bg-neutral-900">
-      <div className="sticky top-36 flex h-[60vh] items-center overflow-hidden ">
-        <motion.div style={{ x }} className="flex gap-4">
+      <div className="sticky top-0 flex h-[100vh] items-center overflow-hidden ">
+        <motion.div style={{ x }} className="flex gap-4 ">
         {cardData.map(card => (
           <Card
             key={card.id}

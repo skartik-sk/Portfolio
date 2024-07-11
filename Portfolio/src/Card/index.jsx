@@ -1,5 +1,5 @@
 import * as React from "react";
-import { memo, useRef,useState } from "react";
+import { memo, useRef,useState, useEffect } from "react";
 import { motion, useMotionValue, useMotionValueEvent, useScroll } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { useInvertedBorderRadius } from "../utils/use-inverted-border-radius";
@@ -43,7 +43,7 @@ export const Card = memo(
     // We'll use the opened card element to calculate the scroll constraints
     const cardRef = useRef(null);
     const constraints = useScrollConstraints(cardRef, isSelected);
-console.log("value :" +constraints.bottom);
+//console.log("value :" +constraints.bottom);
     function checkSwipeToDismiss() {
      if (y.get() > dismissDistance) {
       isSelected= !isSelected
@@ -68,19 +68,27 @@ console.log("value :" +constraints.bottom);
       checkSwipeToDismiss,
       isSelected
     );
-
-useMotionValueEvent (x,
+    const { scrollYProgress } = useScroll();
+  
+  //   useEffect (() =>{
+  //   const unsub =X.on ("change", (latest) => console.log(latest))
+  //   return () => 
+  //     unsub()
+    
+  // }, [X]);
+    const [Scy, setScy] = useState(0)
+useMotionValueEvent (scrollYProgress,
   "change",
   (latest) => {
-   x.set(latest)
-   console.log(x);
+    setScy(latest)
+   console.log(latest);
     // setscx(latest)
   }) ;
 
     return (
       <div ref={containerRef} className={` relative p-6 h-[460px] flex-none w-4/12`}>
         <Overlay isSelected={isSelected} />
-        <div className={` ${isSelected ? `fixed top-0 left-${scx}  right-6  z-10 overflow-hidden p-0` : "block relative w-fit h-full pointer-events-none"}`}>
+        <div className={` ${isSelected ? `fixed top-0 left-0 right-0  z-10 overflow-hidden p-0` : "block relative w-fit h-full pointer-events-none"}`}>
           <motion.div
             ref={cardRef}
             className=" overflow-hidden pointer-events-auto relative rounded-xl bg-[#1c1c1e]  h-full m-auto"
