@@ -13,16 +13,13 @@ const TopNav = () => {
 //       else {
 //         sethidden(false)
 //       }
-
-  
-
 //   }) ;
   const {hidden , sethidden} = useState(false)
   return (
     <div
    
     
-    className=" sticky top-5 mx-auto p-1   bg-black  rounded-full my-5 flex    ">
+    className=" sticky top-5 mx-auto p-1   bg-black  rounded-full my-5 flex z-50   ">
 
       <div className="  flex w-full space-x-3 font-light justify-between">
         <div className="py-3  px-10 bg-black rounded-full text-lg font-semibold ">
@@ -38,7 +35,7 @@ const TopNav = () => {
 
         <img
           className="w-12 h-12 mx-6 "
-          src="https://raw.githubusercontent.com/SingupalliKartik/Portfolio/main/Portfolio/src/assets/logo.png"
+          src="https://raw.githubusercontent.com/SingupalliKartik/Portfolio/cbaf1ea3de80bb33ef8a4aa8169cf9a9698ac0d1/Portfolio/public/image2.png"
           alt=""
           />
           </div>
