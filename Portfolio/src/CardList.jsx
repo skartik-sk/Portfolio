@@ -18,14 +18,15 @@ const List = () => {
 
     return (
       <section ref={targetRef} className=" h-[200vh] bg-neutral-900">
-      <div className="sticky top-0 flex h-[100vh] items-center overflow-hidden ">
+      <div className="sticky top-0 flex h-[90vh] items-center overflow-hidden ">
         <motion.div style={{ x }} className="flex gap-4 ">
-        {cardData.map(card => (
+        {cardData.map((card,index) => (
           <Card
             key={card.id}
             isSelected={params.id === card.id}
             navigate={navigate}
             {...card}
+            xPos={index }
           />
         ))}
         </motion.div>

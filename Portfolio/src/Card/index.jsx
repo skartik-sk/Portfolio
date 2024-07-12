@@ -20,7 +20,7 @@ import { useWheelScroll } from "../utils/use-wheel-scroll";
 
 // Distance in pixels a user has to scroll a card down before we recognise
 // a swipe-to dismiss action.
-const dismissDistance = 100 ;
+const dismissDistance = 50 ;
 
 export const Card = memo(
   ({
@@ -30,7 +30,8 @@ export const Card = memo(
     category,
     navigate,
     pointOfInterest,
-    backgroundColor
+    backgroundColor, 
+    xPos,
   }) => {
     // const navigate = useNavigate();
     const y = useMotionValue(0);
@@ -76,6 +77,7 @@ export const Card = memo(
   //     unsub()
     
   // }, [X]);
+  const translateX = `translate-x-[-${xPos}%]`;
     const [Scy, setScy] = useState(0)
 useMotionValueEvent (scrollYProgress,
   "change",
@@ -87,8 +89,8 @@ useMotionValueEvent (scrollYProgress,
 
     return (
       <div ref={containerRef} className={` relative p-6 h-[460px] flex-none w-4/12`}>
-        <Overlay isSelected={isSelected} />
-        <div className={` ${isSelected ? `fixed top-0 left-0 right-0  z-10 overflow-hidden p-0` : "block relative w-fit h-full pointer-events-none"}`}>
+        <Overlay isSelected={isSelected} translateX= {xPos} />
+        <div className={` ${isSelected ? `fixed top-0   bottom-0  z-10 overflow-hidden p-0 w-screen h-screen ` : "block relative w-fit h-full pointer-events-none"}`}>
           <motion.div
             ref={cardRef}
             className=" overflow-hidden pointer-events-auto relative rounded-xl bg-[#1c1c1e]  h-full m-auto"
@@ -116,13 +118,13 @@ useMotionValueEvent (scrollYProgress,
   (prev, next) => prev.isSelected === next.isSelected
 );
 
-const Overlay = ({ isSelected }) => (
+const Overlay = ({ isSelected, xPos }) => (
   <motion.div
     initial={false}
     animate={{ opacity: isSelected ? 1 : 0 }}
     transition={{ duration: 0.2 }}
     style={{ pointerEvents: isSelected ? "auto" : "none" }}
-    className="fixed z-10 bg-black/80  top-0 bottom-0  w-screen h-screen translate-x-[-50%]"
+    className={`fixed z-10 bg-black/80  top-0 bottom-0  w-screen h-screen left-${4/12*xPos} `}
   >
     <Link  to="/" />
   </motion.div>
