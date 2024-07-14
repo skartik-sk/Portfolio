@@ -1,22 +1,17 @@
-import * as React from "react";
+import React from "react";
 import { motion, useDeprecatedInvertedScale } from "framer-motion";
 import { closeSpring } from "./animations";
 
-export const Image = ({
-  id,
-  isSelected,
-  pointOfInterest = 0,
-  backgroundColor
-}) => {
+export const Image = ({ id, isSelected, pointOfInterest = 0, backgroundColor }) => {
   const inverted = useDeprecatedInvertedScale();
 
   return (
     <motion.div
-      className="absolute top-0 left-0 overflow-hidden h-[420px] w-screen"
+      className="relative overflow-hidden w-full h-[420px] transform-gpu"
       style={{ ...inverted, backgroundColor, originX: 0, originY: 0 }}
     >
       <motion.img
-        className="card-image"
+        className="absolute inset-0 w-full h-full object-cover"
         src={`images/${id}.jpg`}
         alt=""
         initial={false}
@@ -28,3 +23,5 @@ export const Image = ({
     </motion.div>
   );
 };
+
+
