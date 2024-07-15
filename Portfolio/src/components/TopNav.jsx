@@ -19,7 +19,7 @@ const TopNav = () => {
     <div
    
     
-    className=" sticky top-5 mx-auto p-1   bg-black  rounded-full my-5 flex z-50   ">
+    className=" sticky top-5 mx-auto p-1   bg-black  rounded-full my-5 flex z-1   ">
 
       <div className="  flex w-full space-x-3 font-light justify-between">
         <div className="py-3  px-10 bg-black rounded-full text-lg font-semibold ">
