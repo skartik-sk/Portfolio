@@ -19,16 +19,16 @@ const TopNav = () => {
     <div
    
     
-    className=" sticky top-5 mx-auto p-1   bg-black  rounded-full my-5 flex z-1   ">
+    className="costomnav sticky top-5 mx-auto p-1     rounded-full my-5 flex z-1   ">
 
       <div className="  flex w-full space-x-3 font-light justify-between">
-        <div className="py-3  px-10 bg-black rounded-full text-lg font-semibold ">
+        <div className="py-3  px-10  rounded-full text-lg font-semibold ">
         Home
         </div>
-        <div className="py-3  px-10 bg-black rounded-full text-lg font-semibold">
+        <div className="py-3  px-10  rounded-full text-lg font-semibold">
           Services
         </div>
-        <div className="py-3  px-10 bg-black rounded-full text-lg font-semibold">
+        <div className="py-3  px-10  rounded-full text-lg font-semibold">
           Projects
         </div>
         <div>
@@ -39,10 +39,10 @@ const TopNav = () => {
           alt=""
           />
           </div>
-        <div className="py-3  px-10 bg-black rounded-full text-lg font-semibold">
+        <div className="py-3  px-10  rounded-full text-lg font-semibold">
           About
         </div>
-        <div className="py-3  px-10 bg-black rounded-full text-lg font-semibold">
+        <div className="py-3  px-10  rounded-full text-lg font-semibold">
           Blog
         </div>
         <div>
