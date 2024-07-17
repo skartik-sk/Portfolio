@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams, useNavigate, Link } from 'react-router-dom';
 import { Card } from './Card';
 import { motion, useTransform, useScroll } from "framer-motion";
@@ -62,48 +62,47 @@ const cardData= [
     backgroundColor: '#CC555B'
   }
 ];
-
 const List = () => {
   const params = useParams();
   const navigate = useNavigate();
   const targetRef = React.useRef(null);
-const { scrollYProgress } = useScroll({
-  target: targetRef,
-});
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
 
-const x = useTransform(scrollYProgress, [0, 1], ["1%", `-${cardData.length *50  }%`]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", `-${cardData.length * 40}%`]);
+
+  const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log( window.scrollX, window.scrollY);
+      setScrollPosition({ x: window.scrollX, y: window.scrollY });
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <section ref={targetRef} className="  h-[400vh] items-center bg-neutral-900">
-      
-    <div className="sticky  top-20 items-center   ">
-      <motion.div style={{ x }} className="flex gap-4 ">
-      {cardData.map((card,index) => (
-        
-        <Card
-          key={card.id}
-          isSelected={params.id === card.id}
-          {...card}
-          />
-         
-        
-      ))}
-      </motion.div>
-    </div>
-  </section>
+    <section ref={targetRef} className="h-[400vh] relative  items-center bg-neutral-900">
+      <div className=" sticky top-[0%] items-center">
+        <motion.div style={{ x }} className="flex align-middle gap-y-4">
+          {cardData.map((card) => (
+            <Card
+              key={card.id}
+              isSelected={params.id === card.id}
+              {...card}
+              scrollPosition={scrollPosition}
+            />
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 };
-// const Overlay = ({ isSelected }) => (
-//   <motion.div
-//     initial={false}
-//     animate={{ opacity: isSelected ? 1 : 0 }}
-//     transition={{ duration: 0.2 }}
-//     style={{ pointerEvents: isSelected ? 'auto' : 'none' }}
-//     className="absolute  bg-black bg-opacity-50 flex items-center justify-center w-[500vw] h-screen"
-//   >
-//     <Link to="/" className="w-full h-full" />
-//   </motion.div>
-// );
+
 export const CardList = () => (
   <Router>
     <Routes>
