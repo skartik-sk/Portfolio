@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams, useNavigate, Link } from 'react-router-dom';
 import { Card } from './Card';
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, useMotionValue } from "framer-motion";
 
 // Sample card data
 const cardData= [
@@ -70,13 +70,13 @@ const List = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", `-${cardData.length * 40}%`]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", `-${cardData.length * 50}%`]);
 
   const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log( window.scrollX, window.scrollY);
+      // console.log( window.scrollX, window.scrollY);
       setScrollPosition({ x: window.scrollX, y: window.scrollY });
     };
     window.addEventListener('scroll', handleScroll);
@@ -84,10 +84,17 @@ const List = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  const [xPosition, setXPosition] = useState(null);
 
+
+  const handleCardClick = (e) => {
+    if (xPosition === null) { // Capture the x position only once
+      setXPosition(x.get());
+    }
+  };
   return (
     <section ref={targetRef} className="h-[400vh] relative  items-center bg-neutral-900">
-      <div className=" sticky top-[0%] items-center">
+      <div className=" sticky top-[0%]">
         <motion.div style={{ x }} className="flex align-middle gap-y-4">
           {cardData.map((card) => (
             <Card
@@ -95,6 +102,8 @@ const List = () => {
               isSelected={params.id === card.id}
               {...card}
               scrollPosition={scrollPosition}
+              posi= {xPosition}
+              onClick={handleCardClick} // Pass the click handler to each card
             />
           ))}
         </motion.div>
