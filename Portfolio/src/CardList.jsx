@@ -70,7 +70,27 @@ const List = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", `-${cardData.length * 50}%`]);
+  
+  
+  // Assuming cardHeight and cardGap are known or calculated elsewhere
+  const cardHeight = 468; // Example card height in pixels
+  const cardGap = 16; // Example gap between cards in pixels
+  
+
+    const [dynamicPercentage, setDynamicPercentage] = useState('0%');
+  
+    useEffect(() => {
+      const totalCardsHeight = cardData.length * (cardHeight + cardGap);
+      const viewportHeight = window.innerHeight;
+      const extraScrollHeight = totalCardsHeight - viewportHeight;
+      const scrollPercentage = (extraScrollHeight / viewportHeight) * 100;
+  
+      setDynamicPercentage(`-${scrollPercentage}%`);
+    }, [cardData.length]); // Recalculate when number of cards changes
+  
+    const x = useTransform(scrollYProgress, [0, 1], ["1%", dynamicPercentage]);
+  
+    
 
   const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
 
