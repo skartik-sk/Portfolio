@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState,useLayoutEffect, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams, useNavigate, Link } from 'react-router-dom';
 import { Card } from './Card';
 import { motion, useTransform, useScroll, useMotionValue } from "framer-motion";
@@ -62,6 +62,28 @@ const cardData= [
     backgroundColor: '#CC555B'
   }
 ];
+const calculateDynamicValue = () => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 600) { // Example breakpoint for small screens
+    return 90;
+  } else if (screenWidth >= 600 && screenWidth < 800) { // Medium screens
+    return 85;
+  } 
+  else if (screenWidth >= 800 && screenWidth < 900) { // Medium screens
+    return 79;
+  }
+  else if (screenWidth >= 900 && screenWidth < 1000) { // Medium screens
+    return 70;
+  }
+  else if (screenWidth >= 1000 && screenWidth < 1100) { // Medium screens
+    return 63;
+  }
+  else if (screenWidth >= 1100 && screenWidth < 1200) { // Medium screens
+    return 58;
+  }else { // Large screens
+    return 50;
+  }
+};
 const List = () => {
   const params = useParams();
   const navigate = useNavigate();
@@ -69,28 +91,19 @@ const List = () => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
+  const [dynamicValue, setDynamicValue] = useState(calculateDynamicValue());
 
-  
-  
-  // Assuming cardHeight and cardGap are known or calculated elsewhere
-  const cardHeight = 468; // Example card height in pixels
-  const cardGap = 16; // Example gap between cards in pixels
-  
+  // Update dynamic value on window resize
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      setDynamicValue(calculateDynamicValue());
+    };
 
-    const [dynamicPercentage, setDynamicPercentage] = useState('0%');
-  
-    useEffect(() => {
-      const totalCardsHeight = cardData.length * (cardHeight + cardGap);
-      const viewportHeight = window.innerHeight;
-      const extraScrollHeight = totalCardsHeight - viewportHeight;
-      const scrollPercentage = (extraScrollHeight / viewportHeight) * 100;
-  
-      setDynamicPercentage(`-${scrollPercentage}%`);
-    }, [cardData.length]); // Recalculate when number of cards changes
-  
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", dynamicPercentage]);
-  
-    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", `-${cardData.length * dynamicValue}%`]);
 
   const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
 
@@ -114,7 +127,7 @@ const List = () => {
   };
   return (
     <section ref={targetRef} className="h-[400vh] relative  items-center bg-neutral-900">
-      <div className=" sticky top-[0%]">
+      <div className=" sticky top-[10%]">
         <motion.div style={{ x }} className="flex align-middle gap-y-4">
           {cardData.map((card) => (
             <Card
