@@ -16,6 +16,12 @@ html{
     pointer-events: none;
     z-index: 99999999; /* so that it stays on top of all other elements */
   }
+
+  .customnav{
+    backdrop-filter: blur(40px);
+    background-color: #62626235;
+    z-index: 10;
+  }
 .MyGradient {
     mask-image: linear-gradient(
       to right,
@@ -52,7 +58,29 @@ html , body{
 
 body {
     @apply bg-Black-primary;
+    cursor: none;
 }
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: hidden; /* Prevents cards from going out of the boundary */
+  }
+  
+  .card {
+    width: 300px; /* Example fixed width */
+    height: 200px; /* Example fixed height */
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Example styling */
+    overflow: hidden; /* Ensures content does not overflow the card */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .card {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
 
 .radial-gradient {
     background: radial-gradient(
@@ -94,3 +122,14 @@ body {
     mask-composite: exclude;
     -webkit-mask-composite: xor;
 }
+.nav-link {
+    /* Default style */
+  }
+  
+  .nav-link.active {
+    /* Gradient style */
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
