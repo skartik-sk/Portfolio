@@ -81,7 +81,7 @@ const calculateDynamicValue = () => {
   else if (screenWidth >= 1100 && screenWidth < 1200) { // Medium screens
     return 58;
   }else { // Large screens
-    return 50;
+    return 51;
   }
 };
 const List = () => {
@@ -126,9 +126,9 @@ const List = () => {
     }
   };
   return (
-    <section ref={targetRef} className="h-[400vh] relative  items-center bg-neutral-900">
-      <div className=" sticky top-[10%]">
-        <motion.div style={{ x }} className="flex align-middle gap-y-4">
+    <section ref={targetRef} className="h-[400vh] relative items-center bg-neutral-900">
+      <div className=" sticky top-[10%]   items-center overflow-hidden">
+        <motion.div style={{ x }} className="flex align-middle gap-y-4  ">
           {cardData.map((card) => (
             <Card
               key={card.id}
