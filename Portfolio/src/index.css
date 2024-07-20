@@ -60,6 +60,9 @@ body {
     @apply bg-Black-primary;
     cursor: none;
 }
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
 .card-container {
     display: flex;
     flex-wrap: wrap;
