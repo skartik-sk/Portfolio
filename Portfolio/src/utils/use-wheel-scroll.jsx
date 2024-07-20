@@ -1,109 +1,89 @@
-// import { RefObject } from "react";
-// import { useDomEvent, MotionValue } from "framer-motion";
-// import { spring } from "popmotion";
-// import { mix } from "@popmotion/popcorn";
-// import { debounce } from "lodash";
+import { useDomEvent, MotionValue } from 'framer-motion';
+import { spring } from 'popmotion';
+import { mix } from '@popmotion/popcorn';
+import { debounce } from 'lodash';
 
+// Constants for wheel scroll behavior
+const deltaThreshold = 5; // Distance in pixels for snap back animation
+const elasticFactor = 0.2; // Factor to control the elasticity of the scroll
 
+/**
+ * Create a spring animation to move the motion value from `from` to `to`.
+ * @param {MotionValue} value - The motion value to animate.
+ * @param {number} from - The starting value of the animation.
+ * @param {number} to - The target value of the animation.
+ */
+function springTo(value, from, to) {
+  if (value.isAnimating()) return;
 
-// // Absolute distance a wheel scroll event can travel outside of
-// // the defined constraints before we fire a "snap back" animation
-// const deltaThreshold = 5;
+  value.start(complete => {
+    const animation = spring({
+      from,
+      to,
+      velocity: value.getVelocity(),
+      stiffness: 400,
+      damping: 40
+    }).start({
+      update: (v) => value.set(v),
+      complete
+    });
 
-// // If wheel event fires beyond constraints, multiple the delta by this amount
-// const elasticFactor = 0.2;
+    return () => animation.stop();
+  });
+}
 
-// function springTo(value, from, to) {
-//   if (value.isAnimating()) return;
+const debouncedSpringTo = debounce(springTo, 100);
 
-//   value.start(complete => {
-//     const animation = spring({
-//       from,
-//       to,
-//       velocity: value.getVelocity(),
-//       stiffness: 400,
-//       damping: 40
-//     }).start({
-//       update: (v) => value.set(v),
-//       complete
-//     });
+/**
+ * Custom hook to handle wheel scroll events for elements with `overflow: hidden`.
+ * Adds constraints for scrolling and a spring animation for "snap back" behavior.
+ * @param {React.RefObject} ref - The ref of the element to attach the event listener to.
+ * @param {MotionValue} y - The MotionValue for the scrollable element.
+ * @param {Object|null} constraints - The scroll constraints (top and bottom bounds).
+ * @param {Function} onWheelCallback - Callback function to handle wheel events.
+ * @param {boolean} isActive - If `true`, the wheel event listener is active.
+ */
+export function useWheelScroll(ref, y, constraints, onWheelCallback, isActive) {
+  const onWheel = (event) => {
+    event.preventDefault();
 
-//     return () => animation.stop();
-//   });
-// }
+    const currentY = y.get();
+    let newY = currentY - event.deltaY;
+    let startedAnimation = false;
+    const isWithinBounds =
+      constraints && newY >= constraints.top && newY <= constraints.bottom;
 
-// const debouncedSpringTo = debounce(springTo, 100);
+    if (constraints && !isWithinBounds) {
+      newY = mix(currentY, newY, elasticFactor);
 
-// /**
-//  * Re-implements wheel scroll for overlflow: hidden elements.
-//  *
-//  * Adds Apple Watch crown-style constraints, where the user
-//  * must continue to input wheel events of a certain delta at a certain
-//  * speed or the scrollable container will spring back to the nearest
-//  * constraint.
-//  *
-//  * Currently achieves this using event.deltaY and a debounce, which
-//  * feels pretty good during direct input but it'd be better to increase
-//  * the deltaY threshold during momentum scroll.
-//  *
-//  * TODOs before inclusion in Framer Motion:
-//  * - Detect momentum scroll and increase delta threshold before spring
-//  * - Remove padding hack
-//  * - Handle x-axis
-//  * - Perhaps handle arrow and space keyboard events?
-//  *
-//  * @param ref - Ref of the Element to attach listener to
-//  * @param y - MotionValue for the scrollable element - might be different to the Element
-//  * @param constraints - top/bottom scroll constraints in pixels.
-//  * @param isActive - `true` if this listener should fire.
-//  */
-// export function useWheelScroll(
-//   ref,
-//   y,
-//   constraints,
-//   onWheelCallback ,
-//   isActive
-// ) {
-//   const onWheel = (event) => {
-//     event.preventDefault();
+      if (newY < constraints.top) {
+        if (event.deltaY <= deltaThreshold) {
+          springTo(y, newY, constraints.top);
+          startedAnimation = true;
+        } else {
+          debouncedSpringTo(y, newY, 0);
+        }
+      }
 
-//     const currentY = y.get();
-//     let newY = currentY - event.deltaY;
-//     let startedAnimation = false;
-//     const isWithinBounds =
-//       constraints && newY >= constraints.top && newY <= constraints.bottom;
+      if (newY > constraints.bottom) {
+        if (event.deltaY >= -deltaThreshold) {
+          springTo(y, newY, constraints.bottom);
+          startedAnimation = true;
+        } else {
+          debouncedSpringTo(y, newY, constraints.bottom);
+        }
+      }
+    }
 
-//     if (constraints && !isWithinBounds) {
-//       newY = mix(currentY, newY, elasticFactor);
+    if (!startedAnimation) {
+      y.stop();
+      y.set(newY);
+    } else {
+      debouncedSpringTo.cancel();
+    }
 
-//       if (newY < constraints.top) {
-//         if (event.deltaY <= deltaThreshold) {
-//           springTo(y, newY, constraints.top);
-//           startedAnimation = true;
-//         } else {
-//           debouncedSpringTo(y, newY, constraints.top);
-//         }
-//       }
+    onWheelCallback(event);
+  };
 
-//       if (newY > constraints.bottom) {
-//         if (event.deltaY >= -deltaThreshold) {
-//           springTo(y, newY, constraints.bottom);
-//           startedAnimation = true;
-//         } else {
-//           debouncedSpringTo(y, newY, constraints.bottom);
-//         }
-//       }
-//     }
-
-//     if (!startedAnimation) {
-//       y.stop();
-//       y.set(newY);
-//     } else {
-//       debouncedSpringTo.cancel();
-//     }
-
-//     onWheelCallback(event);
-//   };
-
-//   useDomEvent(ref, "wheel", isActive && onWheel, { passive: false });
-// }
+  useDomEvent(ref, 'wheel', isActive && onWheel, { passive: false });
+}
