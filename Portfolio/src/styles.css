@@ -1,4 +1,4 @@
-/* .App {
+.App {
   font-family: sans-serif;
   text-align: center;
 }
@@ -108,6 +108,7 @@ li {
   position: relative;
   display: block;
   pointer-events: none;
+  
 }
 
 .card-content-container.open {
@@ -239,4 +240,4 @@ p {
   .card-content-container.open {
     padding: 0;
   }
-} */
+}

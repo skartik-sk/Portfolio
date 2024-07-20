@@ -7,12 +7,14 @@ export const ContentPlaceholder = React.memo(({isSelected}) => {
 
   return (
     <motion.div
-      className="content-container p-[35px] max-w-[700px] w-[90vw] bg-[#1c1c1e] mx-auto"
+      className={`content-container ${isSelected? "p-[35px]":"px-[35px]"} max-w-[700px] w-[90vw] bg-[#1c1c1e] mx-auto`}
       style={{ ...inverted, originY: 0, originX: 0 }}
     >
-      <LoremIpsum p={6} avgWordsPerSentence={6} avgSentencesPerParagraph={4} />
-    </motion.div>
+      <div>{isSelected? <> <LoremIpsum p={8} avgWordsPerSentence={6} avgSentencesPerParagraph={4} />
+      </>: <div></div>}</div>
+      </motion.div>
   );
 });
+
 
  
