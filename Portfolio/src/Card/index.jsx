@@ -80,7 +80,7 @@ const handleClick = (e) => {
   return (
     <div
       ref={containerRef}
-      className={`relative p-6 `}
+      className={`relative p-6  `}
       onClick={handleClick}
     >
       <Overlay isSelected={isSelected} />
