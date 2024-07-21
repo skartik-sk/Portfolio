@@ -6,25 +6,26 @@ import { motion, useTransform, useScroll, useMotionValue } from "framer-motion";
 // Sample card data
 const cardData= [
   {
+    id: 'a',
+    category: 'Android',
+    title: 'Calfinity ',
+    pointOfInterest: 260,
+    backgroundColor: '#5DBCD2'
+  },
+  {
+    id: 'f',
+    category: 'UI/UX',
+    title: 'Lumina',
+    pointOfInterest: 120,
+    backgroundColor: '#959684'
+  },
+  
+  {
     id: 'c',
     category: 'Pizza',
     title: '5 Food Apps Delivering the Best of Your City',
     pointOfInterest: 80,
     backgroundColor: '#814A0E'
-  },
-  {
-    id: 'f',
-    category: 'How to',
-    title: 'Arrange Your Apple Devices for the Gram',
-    pointOfInterest: 120,
-    backgroundColor: '#959684'
-  },
-  {
-    id: 'a',
-    category: 'Pedal Power',
-    title: 'Map Apps for the Superior Mode of Transport',
-    pointOfInterest: 260,
-    backgroundColor: '#5DBCD2'
   },
   {
     id: 'g',
@@ -81,7 +82,7 @@ const calculateDynamicValue = () => {
   else if (screenWidth >= 1100 && screenWidth < 1200) { // Medium screens
     return 58;
   }else { // Large screens
-    return 51;
+    return 48;
   }
 };
 const List = () => {
@@ -127,7 +128,7 @@ const List = () => {
   };
   return (
     <section ref={targetRef} className="h-[400vh] relative items-center bg-neutral-900">
-      <div className=" sticky top-[10%]   items-center overflow-hidden">
+      <div className=" sticky top-[8%]   items-center overflow-hidden">
         <motion.div style={{ x }} className="flex align-middle gap-y-4  ">
           {cardData.map((card) => (
             <Card
