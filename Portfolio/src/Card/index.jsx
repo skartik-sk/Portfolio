@@ -9,10 +9,19 @@ import { Image } from './Image';
 import { openSpring, closeSpring } from './animations';
 import { useScrollConstraints } from '../utils/use-scroll-constraints';
 import { useWheelScroll } from '../utils/use-wheel-scroll';
+const calculateDynamicValue = () => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 600) { // Example breakpoint for small screens
+    return -450;
+  } else { // Medium screens
+    return -290;
+  }
+};
+//todo add the dynamic value to the dismiss distance based on the text size
 const dismissDistance = 60 ;
-const dismissDistance2 = -300 ;
+const dismissDistance2 = calculateDynamicValue() ;
 
-const Card = memo(({ isSelected, id, title, category, history, pointOfInterest, backgroundColor,scrollPosition, onClick,posi }) => {
+const Card = memo(({ isSelected, id, title,c1,c2,c3,url, category, history, pointOfInterest, backgroundColor,scrollPosition, onClick,posi }) => {
   const y = useMotionValue(0);
   const zIndex = useMotionValue(isSelected ? 2 : 0);
   // Maintain the visual border radius when we perform the layoutTransition by inverting its scaleX/Y
@@ -24,6 +33,7 @@ const navigate = useNavigate()
 
   function checkSwipeToDismiss() {
     if (y.get() > dismissDistance || y.get() < dismissDistance2){
+      y.set(0);
       isSelected= !isSelected
       navigate("/");
   }
@@ -43,26 +53,38 @@ const navigate = useNavigate()
 
   // <---------------------------------------------->
   const [translateX, setTranslateX] = useState(0); // Step 4: State to hold translate value
-// Step 1: Modified onClick handler to capture event and calculate translateX
-let   factor = 1; // Step 6: Factor to adjust translateX
+ // Step 6: Factor to adjust translateX
+const [translateY, setTranslateY] = useState(0); // Step 1: Add state for Y translation
+
+let factor = 1; // Factor to adjust translateX (and potentially translateY)
+let factorY = 1; // Step 2: Factor to adjust translateY
+
 const handleClick = (e) => {
   // Calculate the card's current left position relative to the viewport
-  const cardLeftPosition = e.target.getBoundingClientRect().left;
+  const cardRect = e.target.getBoundingClientRect();
+  const cardLeftPosition = cardRect.left;
+  const cardTopPosition = cardRect.top ; // Step 3: Get the top position
 
   // Calculate translation to move card to the left edge of the screen
   const translateXToLeftEdge = -cardLeftPosition;
+  const translateYToTopEdge = -cardTopPosition ; // Step 4: Calculate translateY to move card to the top edge
 
-  // Apply translation to move card to the left edge
-  setTranslateX(translateXToLeftEdge); // Assuming setTranslateX updates the card's transform property
-
-  // Optionally, adjust the card's size to cover the full viewport
-  // This might involve setting state that adjusts the card's width and height to `window.innerWidth` and `window.innerHeight`
-  // For example:
-  // setCardSize({ width: window.innerWidth, height: window.innerHeight });
-
-  console.log(translateXToLeftEdge); // Log the translation value
-  onClick(); // Call original onClick if needed
+  // Apply translation to move card
+  setTranslateX(translateXToLeftEdge * factor); // Apply factor if needed
+  setTranslateY(translateYToTopEdge * factorY);
+  onClick() // Step 5: Apply factorY and update translateY state
 };
+const calculateDynamicValue = () => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 500) { // Example breakpoint for small screens
+    return 10;
+  } else { 
+    return 85;
+  } 
+ 
+};
+ // <---------------------------------------------->
+
 // console.log(translateX);
 
   // When this card is selected, attach a wheel event listener
@@ -78,24 +100,27 @@ const handleClick = (e) => {
   // };
   // const factor = 1.7;
   return (
+    
     <div
       ref={containerRef}
-      className={`relative p-6  `}
+      
+     
+      className={`relative px-6 py-2   `}
       onClick={handleClick}
     >
       <Overlay isSelected={isSelected} />
       <div
-        style={{ transform: `translateX(${isSelected ? translateX * factor : 0}px)` }}
+        style={{ overflowY: isSelected ? 'auto' : 'hidden', transform: `translateX(${isSelected ? (translateX * factor) -12 : 0}px) translateY(${isSelected ? (translateY * factorY)+ calculateDynamicValue() : 0}px)` }}
         className={`${
-          isSelected ? 'relative z-10 overflow-hidden p-0 w-screen selected-style ' : 'block relative w-fit pointer-events-none'
+          isSelected ? 'relative z-10  p-0 w-[97vw] h-[90vh] selected-style ' : 'block relative w-fit  pointer-events-none'
         }`}
       >
         <motion.div
           ref={cardRef}
-          className="overflow-hidden pointer-events-auto bg-[#1c1c1e] h-full m-auto"
-          style={{ ...inverted, zIndex, y }}
+          className="overflow-hidden pointer-events-auto bg-[#1c1c1e] h-fit m-auto "
+          style={{ ...inverted, zIndex, y, }}
           layoutTransition={isSelected ? openSpring : closeSpring}
-          drag={isSelected ? 'Y' : false}
+          drag={isSelected ? "y" : false}
           dragConstraints={constraints}
           onDrag={checkSwipeToDismiss}
           onUpdate={checkZIndex}
@@ -107,7 +132,7 @@ const handleClick = (e) => {
             backgroundColor={backgroundColor}
           />
           <Title title={title} category={category} isSelected={isSelected} />
-          <ContentPlaceholder isSelected={isSelected} />
+          <ContentPlaceholder c1={c1} c2={c2} c3={c3} url={url} isSelected={isSelected} />
         </motion.div>
       </div>
       {!isSelected && <Link to={id} className="absolute inset-0" />}
