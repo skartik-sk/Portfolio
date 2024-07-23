@@ -7,7 +7,7 @@ export const Image = ({ id, isSelected, pointOfInterest, backgroundColor }) => {
 
   return (
     <motion.div
-      className="relative overflow-hidden w-full h-[400px] mx-auto transform-gpu"
+      className="relative overflow-hidden w-full h-[43vh] m-auto transform-gpu"
       style={{ ...inverted, backgroundColor, originX: 0, originY: 0 }}
     >
       <motion.img
