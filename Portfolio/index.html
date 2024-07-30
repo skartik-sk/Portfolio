@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/image2.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Singupalli Kartik</title>
   </head>
   <body>
     <div class="circle"></div>
@@ -106,7 +107,58 @@ animateCircles();
     };
 
     
+// touch to mouse
 
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+document.addEventListener('touchend', handleTouchEnd, false);
+
+let xDown = null;                                                        
+let yDown = null;                                                        
+let yDiff = 0;
+
+function handleTouchStart(evt) {                                         
+    xDown = evt.touches[0].clientX;                                      
+    yDown = evt.touches[0].clientY;                                      
+};
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    let xUp = evt.touches[0].clientX;                                    
+    let yUp = evt.touches[0].clientY;
+
+    yDiff = yDown - yUp;
+
+    // Optionally, apply a transform to the card element to simulate dragging
+    // For example, if your card has an id="myCard"
+    let card = document.getElementsByClassName('myCard');
+    if(card) {
+        card.style.transform = `translateY(${yDiff}px)`;
+    }
+};
+
+function handleTouchEnd(evt) {
+    // Determine if the swipe was significant
+    if (yDiff > 50) { // 50px threshold for swipe up
+        // Swipe up detected
+        console.log('Swipe up detected');
+        // Perform your action here, e.g., change card content, move to the next card, etc.
+    }
+
+    // Reset values
+    xDown = null;
+    yDown = null;
+    yDiff = 0;
+
+    // Reset card position
+    let card = document.getElementById('myCard');
+    if(card) {
+        card.style.transform = '';
+    }
+};
 
     </script>
   </body>
