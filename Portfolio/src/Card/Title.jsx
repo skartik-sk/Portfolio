@@ -16,8 +16,10 @@ export  const Title = ({ title, category, isSelected }) => {
       transformTemplate={scaleTranslate}
       style={{ ...inverted, originX: 0, originY: 0 }}
     >
-      <span className="text-white text-sm uppercase">{category}</span>
-      <h2 className="text-white my-2 mb-2">{title}</h2>
+     <span className="text-transparent bg-clip-text bg-gradient-background text-xl font-bold">
+{category}
+        </span>
+      <h2 className="text-white text-xl font-black my-2 mb-2">{title}</h2>
     </motion.div>
   );
 };
