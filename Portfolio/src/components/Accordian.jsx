@@ -5,33 +5,30 @@ const Accordion = () => {
     <>
 
     <section className="relative  ">
-      <div className=" ">
        
 
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4 ">
+        <div className="lg:-mx-4 flex w-full space-y-2 lg:px-4 flex-wrap">
+        
             <AccordionItem
-              header="How long we deliver your first blog post?"
-              text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
+              header="What types of websites and apps do you develop?"
+              text=" I develop a wide range of websites and apps, including e-commerce platforms, corporate websites, personal blogs, and custom mobile applications. My goal is to create functional and visually appealing digital solutions that meet the specific needs of each client."
             />
             <AccordionItem
-              header="How long we deliver your first blog post?"
-              text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
+              header="What is your development process like?"
+              text="My development process typically involves several stages: initial consultation and requirement gathering, planning and design, development, testing, and deployment. I keep my clients involved and informed throughout the process to ensure the final product meets their expectations"
             />
             <AccordionItem
-              header="How long we deliver your first blog post?"
-              text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
+              header="What makes your work unique?"
+              text="My work is unique because I prioritize creating tailored solutions that perfectly blend creativity with functionality. I take the time to understand each client's specific needs and goals, which allows me to design and develop custom solutions that stand out. My approach ensures that the final product is not only aesthetically pleasing but also highly effective in achieving the client's objectives"
             />
+            <AccordionItem
+              header="Do you offer responsive design?"
+              text = "Absolutely. All of my websites and apps are designed to be fully responsive, meaning they will look and perform great on any device, whether it's a desktop, tablet, or smartphone. Ensuring a consistent user experience across all devices is a top priority."
+              />
           </div>
-          <div className="w-full px-4">
-            
-            <AccordionItem
-              header="How long we deliver your first blog post?"
-              text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
-            />
-          </div>
-        </div>
-      </div>
+        
+        
+
 
       <div className="absolute bottom-0 right-0 z-[-1] opacity-35">
         <svg

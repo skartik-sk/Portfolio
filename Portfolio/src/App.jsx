@@ -28,7 +28,7 @@ function App() {
     });
 
     function raf(time) {
-      lenis.raf(time);
+      // lenis.raf(time);
       requestAnimationFrame(raf);
     }
 
@@ -60,7 +60,7 @@ useMotionValueEvent (scrollYProgress,
       style={{
         scaleX: scrollYProgress,
         
-      }} className="fixed  h-1 rounded-full w-full
+      }} className="fixed z-10 h-1 rounded-full w-full
 bg-gradient-background">
         
       </motion.div>

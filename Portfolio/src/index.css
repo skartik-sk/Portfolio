@@ -16,7 +16,10 @@ html{
     pointer-events: none;
     z-index: 99999999; /* so that it stays on top of all other elements */
   }
-
+  .myCard {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
   .customnav{
     backdrop-filter: blur(40px);
     background-color: #62626235;

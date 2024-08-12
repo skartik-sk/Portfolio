@@ -24,7 +24,7 @@ const cardData= [
     content1:"The Planning Paradise is an exceptional event coordination UI design by Team Lumina—Abhijeet Raj, Singupalli Kartik, and Taniya S. A heartfelt thanks to Devoic for the opportunity to showcase our design talents and enhance the event planning experience.",
     content2:"Lumina simplifies event management with a user-friendly interface, allowing organizers to easily create and customize events. Enjoy seamless navigation, effortless booking, real-time notifications, and efficient feedback collection, ensuring a smooth event experience.",
     content3:"Our design makes event organization effortless. With features to set event details, promote events, and engage a wider audience, Lumina facilitates smooth interactions for both organizers and attendees. Explore and book events with ease, and receive timely updates.",
-    url:"https://lnkd.in/dnjeYiR9",
+    url:"https://www.figma.com/proto/weNjcRe4acuExcZNBh6uj9/team-lumina?page-id=0%3A1&type=design&node-id=66-2&viewport=374%2C13%2C0.07&scaling=contain&starting-point-node-id=25%3A7",
     pointOfInterest: 120,
     backgroundColor: '#000000'
   },
@@ -36,7 +36,7 @@ const cardData= [
     content1:"Insurance Wala Excited -a comprehensive UI design for an insurance website and app, crafted using Figma! With the invaluable guidance from Devoic - Build A Strong Proof Of Work, I developed an intuitive interface to simplify insurance coverage selection.",
 content2:"The design focuses on creating a seamless user experience, making it easy for customers to navigate and find the insurance they need. From home to auto insurance, every aspect was designed for clarity and ease of use.",
 content3:"The UI features a cohesive color scheme and thoughtfully chosen fonts for a polished look. Designed for both the web and app versions, this project aims to enhance user interaction with a smooth, user-friendly interface.",
-url:"https://lnkd.in/dRyesz9t",
+url:"https://www.figma.com/proto/7WpGzC8PN6fY5A0O36PEDB/Project-3-kartik-final?page-id=0%3A1&type=design&node-id=10-2&viewport=944%2C305%2C0.43&scaling=scale-down&starting-point-node-id=10%3A2&show-proto-sidebar=1",
 
     pointOfInterest: 80,
     backgroundColor: '#000000'
@@ -84,7 +84,7 @@ const cardData2= [
     content1:"Meet QuikPic, a cutting-edge social networking platform crafted by Isha and myself, with expert guidance from Devoic and mentorship from Pranjal Gupta sir. Designed for effortless online connections, QuikPic aims to simplify and enhance your social interactions.",
     content2:"QuikPic offers a seamless user experience with easy authentication, profile management, and robust post functionality. Engage with your network through posts, likes, comments, and follows. Enjoy a smooth, interactive platform that brings people closer.",
     content3:"Our tech stack includes React.js and Next UI for a dynamic frontend, Node.js and Express.js for a robust backend, and MongoDB for efficient data management. We use Cloudinary for image hosting, JWT for authentication, and Nodemailer for email communications. Hosted on Render and Netlify.",
-    url:"https://lnkd.in/d4_rvNBE",
+    url:"https://main--quikpikweb.netlify.app",
     pointOfInterest: 200,
     backgroundColor: '#000000'
   },

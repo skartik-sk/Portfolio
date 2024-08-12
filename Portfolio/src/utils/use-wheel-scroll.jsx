@@ -65,12 +65,12 @@ export function useWheelScroll(ref, y, constraints, onWheelCallback, isActive) {
         }
       }
 
-      if (newY > constraints.bottom) {
+      if (newY > (constraints.bottom-38)) {
         if (event.deltaY >= -deltaThreshold) {
-          springTo(y, newY, constraints.bottom);
+          springTo(y, newY, 0);
           startedAnimation = true;
         } else {
-          debouncedSpringTo(y, newY, constraints.bottom);
+          debouncedSpringTo(y, newY, 0);
         }
       }
     }

@@ -13,7 +13,7 @@ const Bubble = () => {
 const BubbleText = () => {
   return (
       <>
-     {"Intrested in working with me".split("").map((child, idx) => (
+     {"Interested in working with me".split("").map((child, idx) => (
           <span className={styles.hoverText} key={idx}>
           {child}
         </span>

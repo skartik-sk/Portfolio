@@ -19,7 +19,7 @@ const GetInTouch = () => {
              Have a project in mind? Looking to partner or work together? Reach
              through the form and I'll get back to you within 48 hours.
            </div>
-           <div className=" flex lg:flex-col md:flex-row  space-y-0 space-x-3 lg:space-x-0 lg:space-y-3">
+           <div className=" flex lg:flex-col md:flex-row flex-col space-x-0 space-y-3  md:space-y-0 md:space-x-3 lg:space-x-0 lg:space-y-3">
              <div className=" flex space-x-3 items-center">
                <svg
                  width="29"
@@ -94,7 +94,7 @@ const GetInTouch = () => {
              name="entry.1074946140"
                type="text"
                placeholder="Enter your name"
-               className="w-full rounded-sm bg-[#1C1C22] p-4 "
+               className="w-full rounded-xl bg-[#1C1C22] p-4 "
              ></input>
            </div>
            <div className="flex flex-col space-y-2 ">
@@ -104,7 +104,7 @@ const GetInTouch = () => {
              name="entry.878227936"
                type="email"
                placeholder="Enter your Email"
-               className="w-full rounded-sm bg-[#1C1C22] p-4 "
+               className="w-full rounded-xl bg-[#1C1C22] p-4 "
              ></input>
            </div>
            <div className="flex flex-col space-y-2 ">
@@ -114,7 +114,7 @@ const GetInTouch = () => {
              name="entry.746722335"
                type="text"
                placeholder="1k-3k"
-               className="w-full rounded-sm bg-[#1C1C22] p-4 "
+               className="w-full rounded-xl bg-[#1C1C22] p-4 "
              ></input>
            </div>
            <div className="flex flex-col space-y-2 my-2">
@@ -123,13 +123,13 @@ const GetInTouch = () => {
      minLength={3}
                name="entry.2074035549"
                id="info"
-               className="w-full rounded-sm bg-[#1C1C22] p-4 "
+               className="w-full rounded-xl bg-[#1C1C22] p-4 "
              ></textarea>
              
            </div>
            
          <div className="py-3 "id="gform">
-               <button type="submit"  className=" lg:w-5/12 md:w-6/12 w-8/12 bg-gradient-background font-bold rounded-full py-3 px-12">
+               <button type="submit"  className=" lg:w-5/12 md:w-6/12 w-8/12 bg-gradient-background font-bold rounded-full py-3 md:px-12 px-7">
                  Submit Now
                </button>
                </div>
