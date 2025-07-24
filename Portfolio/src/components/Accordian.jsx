@@ -10,21 +10,17 @@ const Accordion = () => {
         <div className="lg:-mx-4 flex w-full space-y-2 lg:px-4 flex-wrap">
         
             <AccordionItem
-              header="What types of websites and apps do you develop?"
-              text=" I develop a wide range of websites and apps, including e-commerce platforms, corporate websites, personal blogs, and custom mobile applications. My goal is to create functional and visually appealing digital solutions that meet the specific needs of each client."
+              header="What blockchain and Web3 services do you offer?"
+              text="I specialize in Solana blockchain development, smart contract creation, and Web3 applications. Having won multiple hackathons including BizzThon Global Business Hackathon 2025, ETH India 2024, and AVSthon, I bring proven expertise in building decentralized applications, DeFi protocols, and blockchain integrations."
             />
             <AccordionItem
-              header="What is your development process like?"
-              text="My development process typically involves several stages: initial consultation and requirement gathering, planning and design, development, testing, and deployment. I keep my clients involved and informed throughout the process to ensure the final product meets their expectations"
+              header="What mobile and web development technologies do you use?"
+              text="I develop mobile applications using Android (native), Flutter, and React Native for cross-platform solutions. For web development, I use modern technologies like Next.js and the MERN stack (MongoDB, Express.js, React, Node.js) to create scalable full-stack applications."
             />
             <AccordionItem
-              header="What makes your work unique?"
-              text="My work is unique because I prioritize creating tailored solutions that perfectly blend creativity with functionality. I take the time to understand each client's specific needs and goals, which allows me to design and develop custom solutions that stand out. My approach ensures that the final product is not only aesthetically pleasing but also highly effective in achieving the client's objectives"
+              header="What's your experience and how do you ensure quality?"
+              text="As a Technical Team Manager at GrowthSquare with 3+ years of experience and 10+ successful projects, I follow industry best practices including agile development, continuous testing, and regular client communication. My approach involves detailed planning and milestone-based delivery to ensure projects meet deadlines and exceed expectations."
             />
-            <AccordionItem
-              header="Do you offer responsive design?"
-              text = "Absolutely. All of my websites and apps are designed to be fully responsive, meaning they will look and perform great on any device, whether it's a desktop, tablet, or smartphone. Ensuring a consistent user experience across all devices is a top priority."
-              />
           </div>
         
         

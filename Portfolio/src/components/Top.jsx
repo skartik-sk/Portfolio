@@ -56,7 +56,7 @@ const Top = () => {
             </div>
             <div className="flex lg:flex-row  flex-col space-y-2 lg:space-y-0 lg:space-x-3">
                <a href="https://resume.skartik.xyz"><button className="bg-gradient-background font-semibold rounded-full py-2 px-10">
-                   Resume
+                 My  Resume
                 </button></a> 
                 <button onClick={(e) => {
                     e.preventDefault(); // Prevent default anchor action
