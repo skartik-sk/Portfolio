@@ -29,7 +29,7 @@ const Top = () => {
         <motion.div className="mb-10 flex flex-col align-middle space-y-5 text-center justify-center items-center ">
             <img
                 className="lg:h-48 h-36 w-36 lg:w-48 rounded-full"
-                src="https://raw.githubusercontent.com/SingupalliKartik/Portfolio/0201b8af1e6e9ddc2ce78d7b5fda12e6c3108f6b/Portfolio/src/assets/photo.jpeg"
+                src={"photo.webp"}
                 alt=""
             />
             <motion.div
@@ -55,12 +55,9 @@ const Top = () => {
                  Expertise lies in App and web development, with great taste UI/UX{" "}
             </div>
             <div className="flex lg:flex-row  flex-col space-y-2 lg:space-y-0 lg:space-x-3">
-                <button onClick={(e) => {
-                    e.preventDefault(); // Prevent default anchor action
-                    scrollToSection('talk');
-                }} className="bg-gradient-background font-semibold rounded-full py-2 px-10">
-                    Get in touch
-                </button>
+               <a href="https://resume.skartik.xyz"><button className="bg-gradient-background font-semibold rounded-full py-2 px-10">
+                   Resume
+                </button></a> 
                 <button onClick={(e) => {
                     e.preventDefault(); // Prevent default anchor action
                     scrollToSection('projects');

@@ -1,7 +1,7 @@
 import React from "react";
-import { FiCreditCard, FiMail, FiUser, FiUsers } from "react-icons/fi";
+import { FiCreditCard, FiMail, FiUser, FiUsers, FiServer } from "react-icons/fi";
 import { IoLogoAndroid } from "react-icons/io";
-import { SiFlutter } from "react-icons/si";
+import { SiFlutter, SiSolana, SiSolidity, SiNextdotjs, SiMongodb, SiExpress, SiNodedotjs, SiReact } from "react-icons/si";
 import { IoLogoReact } from "react-icons/io5";
 import { IoLogoFigma } from "react-icons/io5";
 const HoverDevCards = () => {
@@ -15,20 +15,52 @@ const HoverDevCards = () => {
             </span>
       <div className="grid gap-4 py-6 grid-cols-2 lg:grid-cols-4">
         <Card
-        
-        href="projects"
+          href="projects"
           title="Android"
-          subtitle="Android app Development"
-          
+          subtitle="Native Mobile Development"
           Icon={IoLogoAndroid}
         />
-        <Card  href="projects" title="React" subtitle="Web Development" Icon={IoLogoReact} />
-        <Card  href="projects" title="Flutter" subtitle="Android app Development"  Icon={SiFlutter} />
+        <Card  
+          href="projects" 
+          title="Flutter" 
+          subtitle="Cross-Platform Mobile" 
+          Icon={SiFlutter} 
+        />
+        <Card  
+          href="projects" 
+          title="React Native" 
+          subtitle="Mobile Development"  
+          Icon={SiReact} 
+        />
         <Card
-          title="UI/UX"
-          subtitle="UI/UX development"
+          title="Next.js"
+          subtitle="Full-Stack Web Development"
           href="projects"
-          Icon={IoLogoFigma}
+          Icon={SiNextdotjs}
+        />
+        <Card
+          title="MERN Stack"
+          subtitle="Full-Stack Development"
+          href="projects"
+          Icon={SiMongodb}
+        />
+        <Card  
+          href="projects" 
+          title="Backend APIs" 
+          subtitle="Server Development"  
+          Icon={FiServer} 
+        />
+        <Card
+          title="Solana"
+          subtitle="Blockchain Development"
+          href="projects"
+          Icon={SiSolana}
+        />
+        <Card
+          title="Smart Contracts"
+          subtitle="Web3 Development"
+          href="projects"
+          Icon={SiSolidity}
         />
       </div>
     </div>

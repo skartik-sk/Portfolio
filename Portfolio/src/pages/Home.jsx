@@ -24,14 +24,17 @@ const Home = () => {
   return (
     <>
       <div id="home" className="" ref={homeRef}>
+        <p className="md:px-36">
         <div className="lg:w-1/2 md:7/12 w-9/12 mx-auto px-2 lg:px-14 md:px-4">
           <Top />
         </div>
         <Trusted />
+        </p>
         <>
           <Bage />
         </>
       </div>
+      <p className="md:px-36 ">
       <div id="services" ref={servicesRef}>
         <Mid />
         <HoverDevCards />
@@ -57,6 +60,7 @@ const Home = () => {
         <FaQs />
         <End />{" "}
       </div>
+      </p>
     </>
   );
 };

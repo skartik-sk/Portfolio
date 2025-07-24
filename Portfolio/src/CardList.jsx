@@ -65,6 +65,16 @@ const cardData2= [
     url:"https://github.com/SingupalliKartik/Zen-talk",
     pointOfInterest: 150,
     backgroundColor: '#000000'
+  }, {
+    id: 'd',
+    category: 'Android',
+    title: 'ZenTalk',
+    content1:"ZenTalk is my latest app built with Kotlin for Android, integrating Firebase and Reality Messaging Service. This app offers a seamless platform for sending photos, creating user profiles, and ensuring secure sign-in with options for verification.",
+    content2:"ZenTalk allows users to effortlessly send and receive photos, manage their profiles, and use Google accounts for quick and secure sign-in. Opt-in verification adds an extra layer of security, enhancing user confidence.",
+    content3:"The app leverages Firebase for backend support and Reality Messaging Service for reliable messaging functionality. Kotlin ensures a robust and efficient Android application, combining modern design with secure authentication methods.",
+    url:"https://github.com/SingupalliKartik/Zen-talk",
+    pointOfInterest: 150,
+    backgroundColor: '#000000'
   },
   {
     id: 'h',
