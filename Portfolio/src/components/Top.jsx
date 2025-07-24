@@ -52,7 +52,7 @@ const Top = () => {
                 ))}
             </motion.div>
             <div className="text-md  text-gray-400 lg:px-5 px-1 w-2/3 mx-auto">
-                 Expertise lies in App and web development, with great taste UI/UX{" "}
+                 Expertise lies in App and web development, with great taste in UI/UX{" "}
             </div>
             <div className="flex lg:flex-row  flex-col space-y-2 lg:space-y-0 lg:space-x-3">
                <a href="https://resume.skartik.xyz"><button className="bg-gradient-background font-semibold rounded-full py-2 px-10">
