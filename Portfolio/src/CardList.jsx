@@ -18,14 +18,14 @@ const cardData= [
   backgroundColor: '#000000'
 },
   {
-    id: 'a',
-    category: 'Android',
-    title: 'Calfinity ',
-    pointOfInterest: 260,
-    content1:"Calcfinity marks my return to app development with Jetpack Compose. This all-in-one calculator app is the beginning of my journey into modern Android tech, showcasing a fresh approach to utility apps.",
-    content2:"Our app includes a basic calculator for everyday arithmetic, a BMI calculator for health insights, and a food contents calculator for precise nutritional information. Each feature is designed to enhance your daily calculations with ease.",
-    content3:"Calcfinity boasts a user-friendly design, ensuring smooth navigation with an intuitive interface. It dynamically adapts to Material You on Android 11+ and is built with Jetpack Compose to leverage the latest development technologies.",
-    url: "https://lnkd.in/dZh6wucp",
+    id: 'h',
+    category: 'Web Development',
+    title: 'Portfolio',
+    content1:"My portfolio —a dynamic portfolio website developed using React, Framer Motion, and Tailwind CSS. This platform combines innovative animations and stylish UI to showcase my work and skills in a visually engaging way.",
+    content2:"With a focus on aesthetics and functionality, the portfolio site features a clean, user-friendly interface. Cool animations and thoughtful design elements highlight my projects and achievements, making for a memorable browsing experience.",
+    content3:"The website leverages Framer Motion for smooth, interactive animations that bring the UI to life. Tailwind CSS ensures a modern, responsive design with flexible styling options. Together, these technologies create an immersive user experience.",
+    url:"https://www.linkedin.com/in/skartik-sk/",
+    pointOfInterest: 60,
     backgroundColor: '#000000'
   },
   {
@@ -109,17 +109,18 @@ const cardData2= [
     pointOfInterest: 150,
     backgroundColor: '#000000'
   }, 
-  {
-    id: 'h',
-    category: 'Web Development',
-    title: 'Portfolio',
-    content1:"My portfolio —a dynamic portfolio website developed using React, Framer Motion, and Tailwind CSS. This platform combines innovative animations and stylish UI to showcase my work and skills in a visually engaging way.",
-    content2:"With a focus on aesthetics and functionality, the portfolio site features a clean, user-friendly interface. Cool animations and thoughtful design elements highlight my projects and achievements, making for a memorable browsing experience.",
-    content3:"The website leverages Framer Motion for smooth, interactive animations that bring the UI to life. Tailwind CSS ensures a modern, responsive design with flexible styling options. Together, these technologies create an immersive user experience.",
-    url:"https://www.linkedin.com/in/skartik-sk/",
-    pointOfInterest: 60,
+   {
+    id: 'a',
+    category: 'Android',
+    title: 'Calfinity ',
+    pointOfInterest: 260,
+    content1:"Calcfinity marks my return to app development with Jetpack Compose. This all-in-one calculator app is the beginning of my journey into modern Android tech, showcasing a fresh approach to utility apps.",
+    content2:"Our app includes a basic calculator for everyday arithmetic, a BMI calculator for health insights, and a food contents calculator for precise nutritional information. Each feature is designed to enhance your daily calculations with ease.",
+    content3:"Calcfinity boasts a user-friendly design, ensuring smooth navigation with an intuitive interface. It dynamically adapts to Material You on Android 11+ and is built with Jetpack Compose to leverage the latest development technologies.",
+    url: "https://lnkd.in/dZh6wucp",
     backgroundColor: '#000000'
   },
+ 
   {
   id: 'n',
   category: 'Blockchain Development',
