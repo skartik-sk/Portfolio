@@ -8,7 +8,7 @@ const Footer = () => {
     }
   };
   return (
-    <div className="px-14 flex flex-col pb-5 space-y-5 w-full md:px-36    ">
+    <div className="px-14 flex flex-col pb-5 space-y-5 w-full md:px-40    ">
       <div className=" rounded-full bg-gray-500 h-[2px] w-full"></div>
       <div>
         <div className="flex lg:flex-row flex-col lg:items-center">

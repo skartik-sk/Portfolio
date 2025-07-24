@@ -7,6 +7,17 @@ import { prototype } from 'postcss/lib/previous-map';
 // Sample card data
 const cardData= [
   {
+  id: 'i',
+  category: 'Flutter', // Corrected category to Flutter
+  title: 'Apna Hostel',
+  content1: "Apna Hostel is my innovative mobile application designed to simplify and streamline hostel management for both students and administrators. My aim was to create a comprehensive, user-friendly platform that brings efficiency and convenience to the entire hostel ecosystem.",
+  content2: "The app offers a robust set of features for students like fee payment tracking, digital notices, and complaint submission. For administrators, there's an associated admin dashboard/website for seamless management of student data, room allocations, payments, and communications, ensuring an all-in-one solution.",
+  content3: "Built using Flutter and Dart for a cross-platform mobile experience, ensuring a smooth and responsive UI. The backend integrates with a robust database (e.g., Firebase/MongoDB) and potentially a web framework (e.g., Node.js/Express.js or Next.js) to power the associated admin dashboard/website, providing a complete management suite.",
+  url: "https://drive.google.com/file/d/1OR-Dmb43ufqOIL7CIIhEWG99J0DkTLSO/view",
+  pointOfInterest: 220,
+  backgroundColor: '#000000'
+},
+  {
     id: 'a',
     category: 'Android',
     title: 'Calfinity ',
@@ -25,10 +36,20 @@ const cardData= [
     content2:"Lumina simplifies event management with a user-friendly interface, allowing organizers to easily create and customize events. Enjoy seamless navigation, effortless booking, real-time notifications, and efficient feedback collection, ensuring a smooth event experience.",
     content3:"Our design makes event organization effortless. With features to set event details, promote events, and engage a wider audience, Lumina facilitates smooth interactions for both organizers and attendees. Explore and book events with ease, and receive timely updates.",
     url:"https://www.figma.com/proto/weNjcRe4acuExcZNBh6uj9/team-lumina?page-id=0%3A1&type=design&node-id=66-2&viewport=374%2C13%2C0.07&scaling=contain&starting-point-node-id=25%3A7",
-    pointOfInterest: 120,
+    pointOfInterest: 0,
     backgroundColor: '#000000'
   },
-  
+  {
+  id: 'k',
+  category: 'Android', // Category set to Android
+  title: 'QuikPic',
+  content1: "Welcome to QuikPic, a dynamic and intuitive social media application built natively for Android. Designed to provide a seamless and engaging user experience, QuikPic allows users to connect with friends, share moments through photos, and interact effortlessly through likes, comments, and shares.",
+  content2: "QuikPic offers secure user authentication (login, signup, logout), robust post functionality (share photos, comment, like, save, explore public content), and rich social interactions (follow/unfollow, view follower/following lists). It also provides real-time updates with dynamic feeds and instant notifications for new interactions.",
+  content3: "Developed primarily with Kotlin as the programming language, utilizing Jetpack Compose for building the native Android UI declaratively. The app follows MVVM Architecture for clean code, uses Dagger Hilt for dependency injection, Retrofit for consuming RESTful APIs, and adheres to Material Design guidelines for a consistent look and feel.",
+  url: "https://github.com/skartik-sk/quikpik-app", // Remember to replace this URL
+  pointOfInterest: 200,
+  backgroundColor: '#000000'
+},
   {
     id: 'c',
     category: 'UI/UX',
@@ -41,6 +62,7 @@ url:"https://www.figma.com/proto/7WpGzC8PN6fY5A0O36PEDB/Project-3-kartik-final?p
     pointOfInterest: 80,
     backgroundColor: '#000000'
   },
+  
   {
     id: 'g',
     category: 'Flutter',
@@ -52,9 +74,30 @@ url:"https://www.figma.com/proto/7WpGzC8PN6fY5A0O36PEDB/Project-3-kartik-final?p
     pointOfInterest: 200,
     backgroundColor: '#000000'
   },
-  
+  {
+  id: 'l',
+  category: 'Web Development',
+  title: 'GrowthSquare Brand Presence',
+  content1: "Developed a dynamic web platform for GrowthSquare, primarily focused on establishing a strong brand presence online. This project was meticulously crafted to showcase their identity and offerings, creating a compelling digital storefront.",
+  content2: "The website provides a comprehensive overview of GrowthSquare's work and initiatives, designed with future scalability in mind to integrate upcoming course-selling features seamlessly. It's built to be both informative and expandable for future business needs.",
+  content3: "The frontend is powered by Next.js, ensuring a fast, SEO-friendly, and interactive user interface with a modern design and appealing color scheme. The backend is robustly built with Node.js, providing a scalable and efficient server-side architecture for seamless content delivery and future e-commerce functionalities.",
+  url: "https://growthsq.in", // Remember to replace this URL
+  pointOfInterest: 190,
+  backgroundColor: '#000000'
+}
 ];
 const cardData2= [
+  {
+  id: 'm',
+  category: 'Blockchain Development',
+  title: 'CoreCensyx',
+  content1: "CoreCensyx is a Web3-native AI Twitter bot designed to bring transparency and insight to on-chain activities. It automatically analyzes Ethereum wallet addresses found in tweets, providing users with instant, verifiable reputation scores and legitimacy summaries.",
+  content2: "The agent leverages OpenAI to generate human-like summaries of wallet reputation, automatically detects tweets with Ethereum addresses, and responds with relevant insights. It checks and reflects verification status on-chain via Arbitrum, ensuring data integrity. This bot is a powerful tool for enhancing trust and understanding in the crypto space.",
+  content3: "The backend smart contract is robustly deployed on Arbitrum One, built using Arbitrum Stylus (Rust) for efficient on-chain data storage and verification. It integrates Google Gemini for natural language explanations, providing clear and concise reputation summaries. A companion frontend allows users to register and verify themselves, completing the ecosystem.",
+  url: "https://dorahacks.io/buidl/25878", // Remember to replace this URL
+  pointOfInterest: 270, // High pointOfInterest for a complex, innovative project
+  backgroundColor: '#000000'
+},
   {
     id: 'd',
     category: 'Android',
@@ -78,6 +121,17 @@ const cardData2= [
     backgroundColor: '#000000'
   },
   {
+  id: 'n',
+  category: 'Blockchain Development',
+  title: 'AnnonyShare',
+  content1: "Welcome to AnnonyShare, a decentralized platform empowering collective action, transparency, and individual voices in the decentralized web. This project aims to enable individuals to safely raise concerns, engage in meaningful dialogue, and foster community-driven change without fear of censorship or reprisal.",
+  content2: "AnnonyShare facilitates transparent and secure communication by leveraging Web3 technologies, allowing users to anonymously share information and participate in discussions. It's designed to build a foundation of trust within communities, driving collective action for positive impact in a decentralized environment.",
+  content3: "Built with Next.js for a responsive and dynamic frontend, ensuring a smooth user experience. The platform extensively leverages cutting-edge Web3 technologies for its decentralized functionalities, utilizing smart contracts for secure interactions and data management on the blockchain. Notably, AnnonyShare is a proud **ETHIndia prize-winning project**, demonstrating its innovative approach and robust implementation.",
+  url: "https://devfolio.co/projects/annonyshare-8842",
+  pointOfInterest: 280, 
+  backgroundColor: '#000000'
+},
+  {
     id: 'e',
     category: 'Web Development',
     title: 'QuikPic',
@@ -100,7 +154,19 @@ const cardData2= [
     url:"https://github.com/SingupalliKartik/dhaaga_app",
     pointOfInterest: 260,
     backgroundColor: '#000000'
-  }
+  },
+  {
+  id: 'j',
+  category: 'Solana Development', // Category specifically for Solana
+  title: 'DASHH - Decentralized Engagement Platform',
+  content1: "DASHH is my innovative decentralized advertising platform, meticulously designed to connect brands with the masses through the power of micro-influencers. It's revolutionizing ad engagement by focusing on transparency, accountability, and direct interactions.",
+  content2: "This platform leverages **Reclaim Protocol** for secure, private engagement verification and **Solana Blink Actions** to track campaigns and real-time interactions seamlessly. It ensures genuine user engagement and transparency through **zkTLS proofs**, currently supporting Instagram Story views with plans for expansion to other platforms. DASHH eliminates middlemen, offering a scalable, trust-based model for fair reward distribution.",
+  content3: "Built primarily on the **Solana blockchain**, utilizing its high throughput and low fees for real-time updates and payments. It integrates the **Reclaim Protocol** for verifiable data, **Solana Blink Actions** for shareable, interactive transactions, and **zkTLS proofs** for privacy-preserving verification of off-chain data. The core logic is likely developed using **Rust** for on-chain programs and **TypeScript** for the front-end and off-chain interactions.",
+  url: "https://blinks-mini.vercel.app",
+  pointOfInterest: 250, // Adjusted pointOfInterest for a high-impact project
+  backgroundColor: '#000000'
+}
+
 ]
 const calculateDynamicValue = () => {
   const screenWidth = window.innerWidth;

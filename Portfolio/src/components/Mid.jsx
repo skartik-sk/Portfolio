@@ -15,7 +15,7 @@ const Mid = () => {
         <div className="w-1 h-full text-6xl text-gray-600"> &#124; </div>
         <div className="items-center justify-center flex flex-col">
           <div className="text-transparent text-4xl font-black bg-clip-text bg-gradient-background">
-            10+
+            15+
           </div>
           <div className="text-gray-300">Successful projects</div>
         </div>
